@@ -24,27 +24,7 @@
                                     <a href="html/index.html" class="nk-menu-link">
                                         <span class="nk-menu-text">Default Dashboard</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="html/index-sales.html" class="nk-menu-link">
-                                        <span class="nk-menu-text">Sales Dashboard</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="html/index-invest.html" class="nk-menu-link">
-                                        <span class="nk-menu-text">Invest Dashboard</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="html/index-crypto.html" class="nk-menu-link">
-                                        <span class="nk-menu-text">Crypto Dashboard</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="html/index-analytics.html" class="nk-menu-link">
-                                        <span class="nk-menu-text">Analytics Dashboard</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
+                                </li>
                             </ul><!-- .nk-menu-sub -->
                         </li><!-- .nk-menu-item -->
                         <li class="nk-menu-item">
