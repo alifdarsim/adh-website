@@ -216,10 +216,9 @@
 
         function featured(id) {
             $.ajax({
-                url: "{{route('cms.blogs.update',':id')}}".replace(':id', id),
-                type: 'PUT',
+                url: "{{route('cms.blogs.featured',':id')}}".replace(':id', id),
+                type: 'GET',
                 data: {
-                    "id": id,
                     "_token": "{{ csrf_token() }}",
                 },
                 success: function () {

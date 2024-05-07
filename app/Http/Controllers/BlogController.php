@@ -31,7 +31,7 @@ class BlogController extends Controller
 
     public function edit($id)
     {
-        $page = Resources::find($id)->first();
+        $page = Resources::find($id);
         if (!$page) return "Cms not exist";
         return view('cms.blogs.edit', compact('page'));
     }
@@ -161,6 +161,7 @@ class BlogController extends Controller
         return $base64;
     }
 
+    // to flag the resources as featured, auto remove all other featured resources of the same type
     public function featured($id)
     {
         $page = Resources::where('id', $id)->first();
