@@ -81,10 +81,20 @@
                                 </ul>
                             </div>
                             <div class="dropdown-inner">
-                                <ul class="link-list">
-                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
-                                </ul>
-                            </div>
+    <ul class="link-list">
+        <li>
+            <!-- Sign out form -->
+            <form id="logout-form" action="{{ route('cms.logout') }}" method="POST">
+                @csrf
+                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <em class="icon ni ni-signout"></em>
+                    <span>Sign out</span>
+                </a>
+            </form>
+        </li>
+    </ul>
+</div>
+
                         </div>
                     </li>
                 </ul>
