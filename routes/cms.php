@@ -25,6 +25,7 @@ Route::group(['middleware' => 'CmsGuard'], function () {
     Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])->name('cms.blogs.destroy'); 
     Route::get('/index', [BlogController::class, 'index'])->name('index');
     Route::post('/blogs', [BlogController::class, 'store'])->name('cms.blogs.store'); 
+    Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('cms.blogs.update'); 
 
     Route::resource('/case-studies', CaseStudiesController::class, ['names' => 'cms.case-studies']);
     Route::resource('/articles', ArticlesController::class, ['names' => 'cms.articles']);
