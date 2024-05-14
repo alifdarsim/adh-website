@@ -20,9 +20,9 @@
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Create Report Resources</h3>
+                <h3 class="nk-block-title page-title">Create New Releases Resources</h3>
                 <div class="nk-block-des text-soft">
-                    <p>Creating a new Report resources for landing page.</p>
+                    <p>Creating a new Releases resources for landing page.</p>
                 </div>
             </div>
         </div>
@@ -36,12 +36,12 @@
                         <div class="row g-2">
                             <div class="col-lg-12 col-sm-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="pageType">Select Page Type</label>
+                                    <label class="form-label" for="pageType">Select Type</label>
                                     <div class="form-control-wrap">
                                         <select class="form-select js-select2" data-placeholder="Status" id="pageType">
-                                            <option value="blogs">Blogs</option>
-                                            <option value="article">Article</option>
-                                            <option value="case studies">Case Studies</option>
+                                            <option value="innovation">Innovation</option>
+                                            <option value="technology">Technology</option>
+                                            <option value="future">Future</option>
                                         </select>
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@
 
             // send the form page_adddata to the server
             $.ajax({
-                url: '{{route('cms.blogs.store')}}',
+                url: '{{route('cms.articles.store')}}',
                 method: 'POST',
                 data: formData,
                 headers: {
@@ -196,7 +196,7 @@
                 success: response => {
                     if (response.success) {
                         Swal.fire('Upload Success', response.message, 'success').then( () => {
-                            window.location.href = '{{route('cms.blogs.index')}}';
+                            window.location.href = '{{route('cms.articles.index')}}';
                         });
                     }
                 },

@@ -3,9 +3,9 @@
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Report Post List</h3>
+                <h3 class="nk-block-title page-title">Trading Item List</h3>
                 <div class="nk-block-des text-soft">
-                    <p>List of all Report post for the web pages</p>
+                    <p>List of all trading items for the commodity pages</p>
                 </div>
             </div><!-- .nk-block-head-content -->
             <div class="nk-block-head-content">
@@ -13,8 +13,8 @@
                     <div class="toggle-expand-content" data-content="pageMenu">
                         <ul class="nk-block-tools g-3">
                             <li class="nk-block-tools-opt">
-                                <a href="{{route('cms.blogs.create')}}" class="btn btn-primary"><em class="icon ni ni-plus"></em>
-                                    <span>Create New Post</span>
+                                <a href="{{route('cms.trading.create')}}" class="btn btn-primary"><em class="icon ni ni-plus"></em>
+                                    <span>Create New Item </span>
                                 </a>
                             </li>
                         </ul>
@@ -134,9 +134,7 @@
             <table id="datatable" class="datatable-init nk-tb-list nk-tb-ulist" data-auto-responsive="true">
                 <thead>
                 <tr class="nk-tb-item nk-tb-head">
-                    <th class="nk-tb-col"><span class="sub-text">Title</span></th>
-                    <th class="nk-tb-col tb-col-lg"><span class="sub-text">Author</span></th>
-                    <th class="nk-tb-col tb-col-mb"><span class="sub-text">Category</span></th>
+                    <th class="nk-tb-col"><span class="sub-text">Title</span></th>                
                     <th class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></th>
                     <th class="nk-tb-col tb-col-lg"><span class="sub-text">Insert At</span></th>
                     <th class="nk-tb-col nk-tb-col-tools text-end"></th>
@@ -154,30 +152,24 @@
     <script>
 
         datatableInit('#datatable', {
-            ajax: '{{route('cms.blogs.index')}}',
-            order:  [[4, 'desc']],
+            ajax: '{{route('cms.trading.index')}}',
+            order:  [[3, 'desc']],
             columnDefs: [
                 { "className": "nk-tb-col", "targets": "_all" }
             ],
             pageLength: localStorage.getItem(window.location.pathname + '_pagination') || 10,
             columns: [
                 {
-                    data: 'title',
+                    data: 'category_type',
                     render: function (data, type, row) {
                         let featured = row.featured ? '<em class="icon ni ni-star-fill fs-6 me-1 text-warning"></em>' : '';
                         return featured + data;
 
                     }
                 },
-                {
-                    data: 'author'
-                },
-                {
-                    data: 'type',
-                    render: function (data) {
-                        return data.replace(/\b\w/g, e => e.toUpperCase());
-                    }
-                },
+              
+              
+
                 {
                     data: 'status',
                     render: function (data) {
@@ -186,7 +178,7 @@
                     },
                 },
                 {
-                    data: 'post_date',
+                    data: 'updated_at',
                     render: function (data) {
                         return data ? moment(data).format(' DD MMM YYYY') : 'N/A';
                     }
@@ -201,6 +193,7 @@
                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <ul class="link-list-opt no-bdr">
+                                                <li><a onclick="detailspage(${data})"><em class="icon ni ni-eye"></em><span>Detail Page</span></a></li>
                                                 <li><a onclick="edit(${data})"><em class="icon ni ni-pen"></em><span>Edit</span></a></li>
                                                 <li><a onclick="remove(${data})"><em class="icon ni ni-trash"></em><span>Remove</span></a></li>
                                                 <li><a onclick="featured(${data})"><em class="icon ni ni-star"></em><span>Featured</span></a></li>
@@ -216,7 +209,7 @@
 
         function featured(id) {
             $.ajax({
-                url: "{{route('cms.blogs.featured',':id')}}".replace(':id', id),
+                url: "{{route('cms.trading.featured',':id')}}".replace(':id', id),
                 type: 'GET',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -231,7 +224,12 @@
         }
 
         function edit(id) {
-            window.location.href = '{{route('cms.blogs.edit', ':id')}}'.replace(':id', id)
+            window.location.href = '{{route('cms.trading.edit', ':id')}}'.replace(':id', id)
+        }
+        function detailspage(id)
+        {
+            window.location.href = '{{route('cms.detailspage.update_details', ':id')}}'.replace(':id', id)
+
         }
 
         function remove(id) {
@@ -243,7 +241,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "{{route('cms.blogs.destroy',':id')}}".replace(':id', id),
+                        url: "{{route('cms.trading.destroy',':id')}}".replace(':id', id),
                         type: 'DELETE',
                         dataType: "JSON",
                         data: {

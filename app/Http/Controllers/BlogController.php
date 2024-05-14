@@ -110,6 +110,7 @@ class BlogController extends Controller
         $description = substr($plainText, 0, 100);
 
         $inserted = Resources::insert([
+            'menu_type' => 'blog',
             'title' => $request->title,
             'type' => $request->type,
             'slug' => $request->slug,

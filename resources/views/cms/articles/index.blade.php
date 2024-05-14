@@ -3,9 +3,9 @@
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Report Post List</h3>
+                <h3 class="nk-block-title page-title">New Releases Post List</h3>
                 <div class="nk-block-des text-soft">
-                    <p>List of all Report post for the web pages</p>
+                    <p>List of all Releases post for the web pages</p>
                 </div>
             </div><!-- .nk-block-head-content -->
             <div class="nk-block-head-content">
@@ -13,7 +13,7 @@
                     <div class="toggle-expand-content" data-content="pageMenu">
                         <ul class="nk-block-tools g-3">
                             <li class="nk-block-tools-opt">
-                                <a href="{{route('cms.blogs.create')}}" class="btn btn-primary"><em class="icon ni ni-plus"></em>
+                                <a href="{{route('cms.articles.create')}}" class="btn btn-primary"><em class="icon ni ni-plus"></em>
                                     <span>Create New Post</span>
                                 </a>
                             </li>
@@ -154,7 +154,7 @@
     <script>
 
         datatableInit('#datatable', {
-            ajax: '{{route('cms.blogs.index')}}',
+            ajax: '{{route('cms.articles.index')}}',
             order:  [[4, 'desc']],
             columnDefs: [
                 { "className": "nk-tb-col", "targets": "_all" }
@@ -216,7 +216,7 @@
 
         function featured(id) {
             $.ajax({
-                url: "{{route('cms.blogs.featured',':id')}}".replace(':id', id),
+                url: "{{route('cms.articles.featured',':id')}}".replace(':id', id),
                 type: 'GET',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -231,7 +231,7 @@
         }
 
         function edit(id) {
-            window.location.href = '{{route('cms.blogs.edit', ':id')}}'.replace(':id', id)
+            window.location.href = '{{route('cms.articles.edit', ':id')}}'.replace(':id', id)
         }
 
         function remove(id) {
@@ -243,7 +243,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "{{route('cms.blogs.destroy',':id')}}".replace(':id', id),
+                        url: "{{route('cms.articles.destroy',':id')}}".replace(':id', id),
                         type: 'DELETE',
                         dataType: "JSON",
                         data: {

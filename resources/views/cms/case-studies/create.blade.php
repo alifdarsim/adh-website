@@ -20,9 +20,9 @@
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Create Report Resources</h3>
+                <h3 class="nk-block-title page-title">Create Case Studies Resources</h3>
                 <div class="nk-block-des text-soft">
-                    <p>Creating a new Report resources for landing page.</p>
+                    <p>Creating a new Case Studies resources for landing page.</p>
                 </div>
             </div>
         </div>
@@ -184,7 +184,7 @@
 
             // send the form page_adddata to the server
             $.ajax({
-                url: '{{route('cms.blogs.store')}}',
+                url: '{{route('cms.case-studies.store')}}',
                 method: 'POST',
                 data: formData,
                 headers: {
@@ -196,7 +196,7 @@
                 success: response => {
                     if (response.success) {
                         Swal.fire('Upload Success', response.message, 'success').then( () => {
-                            window.location.href = '{{route('cms.blogs.index')}}';
+                            window.location.href = '{{route('cms.case-studies.index')}}';
                         });
                     }
                 },

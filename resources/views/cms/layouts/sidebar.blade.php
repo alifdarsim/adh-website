@@ -20,8 +20,8 @@
                     </li>
                     <li class="nk-menu-item">
                         <a href="{{route('cms.blogs.index')}}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-blogger"></em></span>
-                            <span class="nk-menu-text">Blogs</span>
+                            <span class="nk-menu-icon"><em class="icon ni ni-report"></em></span>
+                            <span class="nk-menu-text">Report</span>
                         </a>
                     </li>
                     <li class="nk-menu-item">
@@ -33,9 +33,32 @@
                     <li class="nk-menu-item">
                         <a href="{{route('cms.articles.index')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-file"></em></span>
-                            <span class="nk-menu-text">Articles</span>
+                            <span class="nk-menu-text">New Releases</span>
                         </a>
                     </li>
+
+                    <li class="nk-menu-item">
+                        <a href="{{route('cms.trading.index')}}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-file"></em></span>
+                            <span class="nk-menu-text">Trading</span>
+                        </a>
+                    </li>
+
+                    <li class="nk-menu-item">
+                        <a href="#" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-file"></em></span>
+                            <span class="nk-menu-text">Team</span>
+                        </a>
+                    </li>
+
+                    <li class="nk-menu-item">
+                        <a href="#" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-file"></em></span>
+                            <span class="nk-menu-text">Career</span>
+                        </a>
+                    </li>
+
+
                 </ul>
             </div>
         </div>

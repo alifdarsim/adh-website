@@ -20,9 +20,9 @@
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Create Report Resources</h3>
+                <h3 class="nk-block-title page-title">New Releases Post Edit</h3>
                 <div class="nk-block-des text-soft">
-                    <p>Creating a new Report resources for landing page.</p>
+                    <p>Edit of  Releases post for the web pages</p>
                 </div>
             </div>
         </div>
@@ -36,12 +36,13 @@
                         <div class="row g-2">
                             <div class="col-lg-12 col-sm-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="pageType">Select Page Type</label>
+                                    <label class="form-label" for="pageType">Select  Type</label>
                                     <div class="form-control-wrap">
                                         <select class="form-select js-select2" data-placeholder="Status" id="pageType">
-                                            <option value="blogs">Blogs</option>
-                                            <option value="article">Article</option>
-                                            <option value="case studies">Case Studies</option>
+                                        <option value="innovation">Innovation</option>
+                                            <option value="technology">Technology</option>
+                                            <option value="future">Future</option>
+                                      
                                         </select>
                                     </div>
                                 </div>
@@ -123,7 +124,7 @@
             <div class="col-lg-8">
                 <div class="card card-bordered h-100">
                     <div class="card-inner h-100">
-                        <textarea id="mytextarea" class="h-100"></textarea>
+                        <textarea id="mytextarea" class="h-100">{{ $page->content }}</textarea>
                     </div>
                 </div>
             </div>
@@ -132,12 +133,16 @@
 @endsection
 @push('scripts')
     <script>
-        tinymce.init({
-            selector: '#mytextarea'
-        });
-        // $('.date-picker').datepicker('setDate', new Date());
-        // $('#addTitle').val('This is a sample title');
-        // $('#addSlug').val('this-is-a-sample-title');
+        $('.date-picker').datepicker('setDate', '{{ $page->created_at }}');
+        $('#addTitle').val('{{ $page->title }}');
+        $('#addSlug').val('{{ $page->slug }}');
+        $('#pageAuthor').val('{{ $page->author }}');
+        $('#pageStatus').val('{{ $page->status }}').trigger('change');
+        $('#pageType').val('{{ $page->type }}').trigger('change');
+        $('#image_holder').attr('src', '{{ asset($page->banner) }}');
+        $('#image_holder').removeClass('d-none');
+        $('#image_button').addClass('d-none');
+        $('#cancel_image_button').removeClass('d-none');
 
         // create a typing change event for the title
         $('#addTitle').on('keyup', e => {
@@ -171,32 +176,25 @@
 
         // get publish button and add event listener
         $('#submitBtn').click(e => {
-            let content = tinymce.activeEditor.getContent();
-            let formData = new FormData();
-            formData.append('content', content);
-            formData.append('type', $('#pageType').val());
-            formData.append('title', $('#addTitle').val());
-            formData.append('slug', $('#addSlug').val());
-            formData.append('post_date', $('#addDate').val());
-            formData.append('status', $('#pageStatus').val());
-            formData.append('author', $('#pageAuthor').val());
-            formData.append('image', $('#formFile').prop('files')[0]);
-
             // send the form page_adddata to the server
             $.ajax({
-                url: '{{route('cms.blogs.store')}}',
-                method: 'POST',
-                data: formData,
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                url: '{{ route('cms.articles.update', $page->id) }}',
+                method: 'PUT',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    content: tinymce.activeEditor.getContent(),
+                    type: $('#pageType').val(),
+                    title: $('#addTitle').val(),
+                    slug: $('#addSlug').val(),
+                    post_date: $('#addDate').val(),
+                    status: $('#pageStatus').val(),
+                    author: $('#pageAuthor').val(),
+                    image: $('#formFile').prop('files')[0]
                 },
-                datatype: 'json',
-                processData: false,
-                contentType: false,
                 success: response => {
                     if (response.success) {
-                        Swal.fire('Upload Success', response.message, 'success').then( () => {
-                            window.location.href = '{{route('cms.blogs.index')}}';
+                        Swal.fire('Update Success', response.message, 'success').then(() => {
+                            window.location.href = '{{ route('cms.articles.index') }}';
                         });
                     }
                 },
