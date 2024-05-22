@@ -2,8 +2,8 @@
     <div class="nk-sidebar-element nk-sidebar-head">
         <div class="nk-sidebar-brand">
             <a href="{{route('index')}}" class="logo-link">
-                <img class="logo-light logo-img" style="height: 40px" src="/assets/images/logo-dark.png" srcset="/assets/images/logo-dark.png" alt="logo">
-                <img class="logo-dark logo-img" style="height: 40px" src="/assets/images/logo-dark.png" srcset="/assets/images/logo-dark.png" alt="logo-dark">
+                <img class="logo-light logo-img" style="height: 40px" src="/assets/images/asiadealhub.png" srcset="/assets/images/asiadealhub.png" alt="logo">
+                <img class="logo-dark logo-img" style="height: 40px" src="/assets/images/footer-logo.png" srcset="/assets/images/footer-logo.png" alt="logo-dark">
             </a>
         </div>
 
@@ -18,24 +18,24 @@
                     <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">RESOURCES</h6>
                     </li>
+
+                    <li class="nk-menu-item">
+                        <a href="{{route('cms.menu.index')}}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-menu"></em></span>
+                            <span class="nk-menu-text">Menu Filter</span>
+                        </a>
+                    </li>
+
+
+
                     <li class="nk-menu-item">
                         <a href="{{route('cms.blogs.index')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-report"></em></span>
-                            <span class="nk-menu-text">Report</span>
+                            <span class="nk-menu-text">Post Content</span>
                         </a>
                     </li>
-                    <li class="nk-menu-item">
-                        <a href="{{route('cms.case-studies.index')}}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-regen-alt"></em></span>
-                            <span class="nk-menu-text">Case Studies</span>
-                        </a>
-                    </li>
-                    <li class="nk-menu-item">
-                        <a href="{{route('cms.articles.index')}}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-file"></em></span>
-                            <span class="nk-menu-text">New Releases</span>
-                        </a>
-                    </li>
+                   
+                 
 
                     <li class="nk-menu-item">
                         <a href="{{route('cms.trading.index')}}" class="nk-menu-link">

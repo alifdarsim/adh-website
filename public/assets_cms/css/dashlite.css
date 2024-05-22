@@ -31225,10 +31225,10 @@ body.nav-shown {
   border-bottom-right-radius: 0;
 }
 .nk-menu-link:hover, .active > .nk-menu-link {
-  color: #8351ec;
+  color: #e8757d;
 }
 .nk-menu-link:hover .count, .active > .nk-menu-link .count {
-  color: #8351ec;
+  color: #e8757d;
 }
 .nk-menu-sub .nk-menu-link {
   padding: 0.375rem 52px 0.375rem 36px;
@@ -31256,7 +31256,7 @@ body.nav-shown {
   color: #C7B0F7;
 }
 .is-light .nk-menu-link:hover, .is-light .active > .nk-menu-link {
-  color: #8351ec;
+  color: #e8757d;
 }
 .is-theme .nk-menu-link:hover, .is-theme .active > .nk-menu-link {
   color: #fff;
@@ -31288,7 +31288,7 @@ body.nav-shown {
   transition: color 0.4s, background-color 0.4s;
 }
 .nk-menu-link:hover .nk-menu-icon, .nk-menu-item.active > .nk-menu-link .nk-menu-icon, .nk-menu-item.current-menu > .nk-menu-link .nk-menu-icon {
-  color: #8351ec;
+  color: #e8757d;
 }
 .is-theme .nk-menu-link:hover .nk-menu-icon, .is-theme .nk-menu-item.active > .nk-menu-link .nk-menu-icon, .is-theme .nk-menu-item.current-menu > .nk-menu-link .nk-menu-icon {
   color: #fff;
@@ -31388,7 +31388,7 @@ body.nav-shown {
   padding-left: 1rem;
 }
 .nk-menu-sub .active > .nk-menu-link {
-  color: #e85347;
+  color: #e8757d;
 }
 .is-theme .nk-menu-sub .active > .nk-menu-link {
   color: #fff;

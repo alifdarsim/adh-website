@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 // Define a route with a locale/translation middleware group
@@ -35,5 +35,12 @@ Route::group(['middleware' => 'setlocale'], function () {
     Route::get('/about-us-contact', fn() => view('about-us.contact'))->name('about-us.contact');
     Route::get('/about-us-career', fn() => view('about-us.career'))->name('about-us.career');
     // ** Expert Routes **
+
+    // ** Resource Routes **
+    Route::get('/resource', [WebController::class, 'index'])->name('resource');
+    Route::get('/filter-resources', 'WebController@filterResources')->name('filter.resources');
+    Route::get('/resources/{slug}', [WebController::class, 'show_details_resources'])->name('resource.details');
+
+    // ** Resource Routes **
 });
 

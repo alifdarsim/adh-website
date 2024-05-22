@@ -11,31 +11,9 @@
                     <img class="logo-dark logo-img" src="/assets_cms/images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                 </a>
             </div><!-- .nk-header-brand -->
-            <div class="nk-header-menu is-light">
-                <div class="nk-header-menu-inner">
-                    <!-- Menu -->
-                    <ul class="nk-menu nk-menu-main">
-                        <li class="nk-menu-item has-sub">
-                            <a href="#" class="nk-menu-link nk-menu-toggle">
-                                <span class="nk-menu-text">Dashboards</span>
-                            </a>
-                            <ul class="nk-menu-sub">
-                                <li class="nk-menu-item">
-                                    <a href="html/index.html" class="nk-menu-link">
-                                        <span class="nk-menu-text">Default Dashboard</span>
-                                    </a>
-                                </li>
-                            </ul><!-- .nk-menu-sub -->
-                        </li><!-- .nk-menu-item -->
-                        <li class="nk-menu-item">
-                            <a href="html/components.html" class="nk-menu-link">
-                                <span class="nk-menu-text">Components</span>
-                            </a>
-                        </li><!-- .nk-menu-item -->
-                    </ul>
-                    <!-- Menu -->
-                </div>
-            </div><!-- .nk-header-menu -->
+           
+
+            
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
                     <li class="dropdown language-dropdown d-none d-sm-block me-n1">

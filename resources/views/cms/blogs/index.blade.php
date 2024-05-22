@@ -3,9 +3,9 @@
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">Report Post List</h3>
+                <h3 class="nk-block-title page-title">Post  Content List</h3>
                 <div class="nk-block-des text-soft">
-                    <p>List of all Report post for the web pages</p>
+                    <p>List of all Post  Content for the web pages</p>
                 </div>
             </div><!-- .nk-block-head-content -->
             <div class="nk-block-head-content">
@@ -173,7 +173,7 @@
                     data: 'author'
                 },
                 {
-                    data: 'type',
+                    data: 'type_name',
                     render: function (data) {
                         return data.replace(/\b\w/g, e => e.toUpperCase());
                     }
@@ -214,9 +214,9 @@
             ]
         });
 
-        function featured(id) {
+        function featured(resources_id) {
             $.ajax({
-                url: "{{route('cms.blogs.featured',':id')}}".replace(':id', id),
+                url: "{{route('cms.blogs.featured',':id')}}".replace(':id', resources_id),
                 type: 'GET',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -230,8 +230,8 @@
             });
         }
 
-        function edit(id) {
-            window.location.href = '{{route('cms.blogs.edit', ':id')}}'.replace(':id', id)
+        function edit(resources_id) {
+            window.location.href = '{{route('cms.blogs.edit', ':resources_id')}}'.replace(':id', resources_id)
         }
 
         function remove(id) {

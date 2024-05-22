@@ -139,53 +139,54 @@
                 </div>
             </button>
             <div class="header-sub-menu sm-menu">
-                <ul class="header-sub-menu-column">
-                    <li class="header-menu-item header-menu-item-32339 menu-item-depth--1 header-menu-item--has-children">
 
-                        <ul class="header-sub-menu-column">
-                            <li class="header-menu-item header-menu-item-176 menu-item-depth--2">
-                                <a href="{{route('industry.aero', 'ms')}}" class="header-menu-link">
-                                    <span>Aerospace & Defense</span>
-                                </a>
-                            </li>
-                            <li class="header-menu-item header-menu-item-20849 menu-item-depth--2">
-                                <a href="industry-agriculture.php" class="header-menu-link">
-                                    <span>Agriculture</span>
-                                </a>
-                            </li>
-                            <li class="header-menu-item header-menu-item-20850 menu-item-depth--2">
-                                <a href="industry-auto.php" class="header-menu-link">
-                                    <span>Automotive & Assembly</span>
-                                </a>
-                            </li>
-                            <li class="header-menu-item header-menu-item-182 menu-item-depth--2">
-                                <a href="industry-chemical.php" class="header-menu-link">
-                                    <span>Chemical</span>
-                                </a>
-                            </li>
-                            <li class="header-menu-item header-menu-item-177 menu-item-depth--2">
-                                <a href="industry-cus-good.php" class="header-menu-link">
-                                    <span>Consumer Packed Goods</span>
-                                </a>
-                            </li>
-                            <li class="header-menu-item header-menu-item-184 menu-item-depth--2">
-                                <a href="industry-education.php" class="header-menu-link">
-                                    <span>Education</span>
-                                </a>
-                            </li>
-                            <li class="header-menu-item header-menu-item-20291 menu-item-depth--2">
-                                <a href="industry-electric.php" class="header-menu-link">
-                                    <span>Electric Power & Natural Gas</span>
-                                </a>
-                            </li>
-                            <li class="header-menu-item header-menu-item-20947 menu-item-depth--2">
-                                <a href="industry-engee.php" class="header-menu-link">
-                                    <span>Engineering & Construction</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                <ul class="header-sub-menu-column">
+          <li class="header-menu-item header-menu-item-32339 menu-item-depth--1 header-menu-item--has-children">
+
+            <ul class="header-sub-menu-column">
+              <li class="header-menu-item header-menu-item-176 menu-item-depth--2">
+                <a href="industry-aero.php" class="header-menu-link">
+                  <span>Aerospace & Defense</span>
+                </a>
+              </li>
+              <li class="header-menu-item header-menu-item-20849 menu-item-depth--2">
+                <a href="industry-agriculture.php" class="header-menu-link">
+                  <span>Agriculture</span>
+                </a>
+              </li>
+              <li class="header-menu-item header-menu-item-20850 menu-item-depth--2">
+                <a href="industry-auto.php" class="header-menu-link">
+                  <span>Automotive & Assembly</span>
+                </a>
+              </li>
+              <li class="header-menu-item header-menu-item-182 menu-item-depth--2">
+                <a href="industry-chemical.php" class="header-menu-link">
+                  <span>Chemical</span>
+                </a>
+              </li>
+              <li class="header-menu-item header-menu-item-177 menu-item-depth--2">
+                <a href="industry-cus-good.php" class="header-menu-link">
+                  <span>Consumer Packed Goods</span>
+                </a>
+              </li>
+              <li class="header-menu-item header-menu-item-184 menu-item-depth--2">
+                <a href="industry-education.php" class="header-menu-link">
+                  <span>Education</span>
+                </a>
+              </li>
+              <li class="header-menu-item header-menu-item-20291 menu-item-depth--2">
+                <a href="industry-electric.php" class="header-menu-link">
+                  <span>Electric Power & Natural Gas</span>
+                </a>
+              </li>
+              <li class="header-menu-item header-menu-item-20947 menu-item-depth--2">
+                <a href="industry-engee.php" class="header-menu-link">
+                  <span>Engineering & Construction</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
                 <ul class="header-sub-menu-column">
                     <li class="header-menu-item header-menu-item-32340 menu-item-depth--1 header-menu-item--has-children">
 
@@ -272,6 +273,15 @@
                                     <span>Travel, Logistics & Infrastructure</span>
                                 </a>
                             </li>
+                            <li class="header-menu-item header-menu-item-32340 menu-item-depth--1 header-menu-item--has-children">
+
+<ul class="header-sub-menu-column">
+  <li class="header-menu-item header-menu-item-177 menu-item-depth--2">
+    <a href="industry-food.php" class="header-menu-link">
+      <span>Food & Beverage</span>
+    </a>
+  </li>
+</ul>
                         </ul>
                     </li>
                 </ul>
@@ -286,39 +296,41 @@
             <!---->
         </li>
 
-
-        <li class="dmenu header-menu-item header-menu-item-5778 menu-item-depth--0 header-menu-item--has-children">
-            <a href="#" id="menuh" class="header-menu-link menuh">
-                <span>{{__('RESOURCE')}}</span>
+        <li class="header-menu-item header-menu-item-5778 menu-item-depth--0">
+      <a href="{{route('resource', 'ms')}}" id="menuh" class="header-menu-link">
+        <span>{{__('RESOURCE')}}</span>
+      </a>
+     <!-- <button type="button" class="header-menu-expand">
+        <div class="icon-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon icon--plus">
+            <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon icon--minus">
+            <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+          </svg>
+        </div>
+      </button>-->
+     <!-- <div class="header-sub-menu sm-menu">
+        <ul class="header-sub-menu-column">
+          <li class="header-menu-item header-menu-item-103 menu-item-depth--1">
+            <a href="blog.php" class="header-menu-link">
+              <span>Blog</span>
             </a>
-            <button type="button" class="header-menu-expand">
-                <div class="icon-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon icon--plus">
-                        <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon icon--minus">
-                        <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
-                    </svg>
-                </div>
-            </button>
-            <div class="header-sub-menu sm-menu">
-                <ul class="header-sub-menu-column">
-                    <li class="header-menu-item header-menu-item-103 menu-item-depth--1">
-                        <a href="resources.php?type=blogs" class="header-menu-link">
-                            <span>Blog</span>
-                        </a>
-                        <!---->
-                    </li>
-                    <li class="header-menu-item header-menu-item-5810 menu-item-depth--1">
-                        <a href="resources.php?type=case_study" class="header-menu-link">
-                            <span>Case Study</span>
-                        </a>
-                        <!---->
-                    </li>
-                </ul>
+           
+          </li>
+          <li class="header-menu-item header-menu-item-5810 menu-item-depth--1">
+            <a href="case-study.php" class="header-menu-link">
+              <span>Case Study</span>
+            </a>
+           
+          </li>
+        </ul>
 
-            </div>
-        </li>
+      </div>-->
+    </li>
+
+
+
         <li class="dmenu header-menu-item header-menu-item-5778 menu-item-depth--0 header-menu-item--has-children">
             <a href="#" id="menuh" class="header-menu-link menuh">
                 <span>{{__('ABOUT US')}}</span>
@@ -378,26 +390,28 @@
         </ul>
 
         <ul id="menu-header-right" class="header-menu header-menu-secondary">
-            <li id="menuh" class="dmenu1 header-menu-item header-menu-item-108 menu-item-depth--0 header-menu-item--has-children">
-                <button id="btn" class="header-menu-link">
-                    <span>{{__('SIGN IN')}}</span>
-                </button>
-                <div class="header-sub-menu sm-menu1">
-                    <ul class="header-sub-menu-column">
-                        <li class="header-menu-item header-menu-item-10388 menu-item-depth--1">
-                            <a href="https://app.asiadealhub.com/auth/login/expert" class="header-menu-link">
-                                <span>Expert Network Platform</span>
-                            </a>
-                        </li>
-                        <li class="header-menu-item header-menu-item-10389 menu-item-depth--1">
-                            <a href="" class="header-menu-link">
-                                <span>Sourcing Service Platform</span>
-                            </a>
-                        </li>
 
-                    </ul>
-                </div>
+        <li id="menuh" class="dmenu1 header-menu-item header-menu-item-108 menu-item-depth--0 header-menu-item--has-children">
+        <button id="btn" class="header-menu-link">
+        <span>{{__('SIGN IN')}}</span>
+        </button>
+        <div class="header-sub-menu sm-menu1">
+          <ul class="header-sub-menu-column">
+            <li class="header-menu-item header-menu-item-10388 menu-item-depth--1">
+              <a href="https://app.asiadealhub.com/auth/register/expert" class="header-menu-link">
+                <span>Expert</span>
+              </a>
             </li>
+            <li class="header-menu-item header-menu-item-10389 menu-item-depth--1">
+              <a href="https://app.asiadealhub.com/auth/login/client" class="header-menu-link">
+                <span>Client</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </li>
+
             <li id="menuh" class="dmenu1 header-menu-item header-menu-item-109 menu-item-depth--0">
                 <button type="button" class="header-menu-link">
           <span>
